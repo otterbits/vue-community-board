@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_community_board"]=self["webpackChunkvue_community_board"]||[]).push([[443],{728:function(n,u,t){t.r(u),t.d(u,{default:function(){return d}});var a=t(252);const e={class:"about"},r=(0,a._)("h1",null,"This is an about page",-1),c=[r];function o(n,u){return(0,a.wg)(),(0,a.iD)("div",e,c)}var s=t(744);const i={},b=(0,s.Z)(i,[["render",o]]);var d=b}}]);
+//# sourceMappingURL=about.dbf28607.js.map
