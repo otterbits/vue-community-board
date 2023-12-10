@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageHome from '@/views/PageHome.vue'
-import BoardList from '@views/board/BoardList.vue'
+import BoardList from '@/views/board/BoardList.vue'
 
 const routes = [
     {
@@ -17,7 +17,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../views/PageAbout.vue')
     },
     {
-        path: 'board/list',
+        path: '/board/list',
         name: 'BoardList',
         component: BoardList
     }
