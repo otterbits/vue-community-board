@@ -3,6 +3,7 @@ import PageHome from '@/views/PageHome.vue'
 import BoardList from '@/views/board/BoardList.vue'
 import BoardDetail from '@/views/board/BoardDetail.vue'
 import BoardWrite from '@/views/board/BoardWrite.vue'
+import Login from "@/views/common/Login"
 
 const routes = [
     {
@@ -10,6 +11,11 @@ const routes = [
         name: 'PageHome',
         component: PageHome
     },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login  //로그인 컴포넌트 추가
+      },
     {
         path: '/about',
         name: 'About',
