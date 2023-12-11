@@ -103,8 +103,7 @@ mounted() {
 // }
 methods: {
     fnGetList() {
-        this.list = [
-            {
+        this.list = {
                 "idx":1,
                 "title": "제목1",
                 "author": "작성자1",
@@ -122,7 +121,25 @@ methods: {
                 "author": "작성자1",
                 "created_at": "작성일시1"
             }
-        ]
+            
+        },
+    fnView(idx) {
+    this.requestBody.idx = idx
+    this.$router.push({
+        path: './detail',
+        query: this.requestBody
+    })
+    },
+    fnWrite() {
+      this.$router.push({
+        path: './write'
+      })
+    },
+    fnPage(n) {
+      if (this.page !== n) {
+        this.page = n
+        this.fnGetList()
+      }
     }
 }
 }
