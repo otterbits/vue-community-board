@@ -52,7 +52,10 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+a:link {
+  color: #ebc60f;
+}
+a:visited {
+  color: #66570f;
 }
 </style>
