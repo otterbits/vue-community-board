@@ -1,6 +1,7 @@
-import { createStore } from "vuex"
-import getters from "./getters"
-import mutations from "./mutations"
+import { createStore } from "vuex";
+import getters from "./getters";
+import mutations from "./mutation";
+import actions from "./actions";
 
 export default createStore({
     state: {
@@ -9,5 +10,6 @@ export default createStore({
     },
     mutations,
     getters,
+    actions
 
-})
+});
