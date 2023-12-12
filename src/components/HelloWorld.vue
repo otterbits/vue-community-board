@@ -55,6 +55,7 @@ li {
 a:link {
   color: #ebc60f;
 }
+
 a:visited {
   color: #66570f;
 }
