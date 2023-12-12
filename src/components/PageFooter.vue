@@ -2,7 +2,7 @@
 <template>
     <hr/>
     <footer>
-        여기는 footer 자리입니다.
+        since 2023.12.09.
     </footer>
 </template>
 
