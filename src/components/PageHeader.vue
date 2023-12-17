@@ -49,24 +49,25 @@ export default {
 </script>
 
 <style>
-.nav-item {
-  padding: 5px 10px;
+.nav-link {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+
+a { 
+  display: inline-block;
+  padding: 5px;
   border-radius: 3px;
   cursor: pointer;
   text-decoration-line: none;
 }
 
-.nav-link:hover {
-  background-color: #2980b9;
-}
-
-a {
-text-decoration-line: none;
-border-radius: 3px;
-}
-
-#nav a.router-link-exact-active {
-font-weight: bold;
-color: #90a7d1;
+a.router-link-exact-active {
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #0054ef;
 }
 </style>
