@@ -31,10 +31,10 @@
         requestBody: this.$route.query,
         idx: this.$route.query.idx,
   
-        title: '',
-        author: '',
-        contents: '',
-        created_at: ''
+        title: 'title',
+        author: 'author',
+        contents: 'contents',
+        created_at: 'created_at'
       }
     },
     mounted() {

@@ -1,7 +1,7 @@
 <template>
 <div class="card-group">
   <div class="card">
-    <img src="../../assets/christmas_1.jpg" class="card-img-top" alt="...">
+    <img src="../../assets/christmas_1.jpg" class="card-img-top" alt="christmas_1">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="../../assets/christmas_2.jpg" class="card-img-top" alt="...">
+    <img src="../../assets/christmas_2.jpg" class="card-img-top" alt="christmas_2">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="../../assets/ocean_1.jpg" class="card-img-top" alt="...">
+    <img src="../../assets/ocean_1.jpg" class="card-img-top" alt="ocean_1">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
