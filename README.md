@@ -6,6 +6,8 @@
 
 **vue.cli**로 개발 환경을 구성하여 게시판을 만들어보려고 합니다.
 
+[>>> community-board <<<](https://otterbits.github.io/vue-community-board/)
+
 since 2023.12.09.
 
 <hr>
