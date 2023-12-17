@@ -92,64 +92,33 @@ export default {
 mounted() {
     this.fnGetList()
 },
-// 서버에서 게시글 가져와서 출력하기
-// methods: {
-//     fnGetList() {
-//       this.requestBody = { // 데이터 전송
-//         sk: this.search_key,
-//         sv: this.search_value,
-//         page: this.page,
-//         size: this.size
-//       }
-
-//       this.$axios.get(this.$serverUrl + "/board/list", {
-//         params: this.requestBody,
-//         headers: {}
-//       }).then((res) => {
-
-//           if (res.data.result_code === "OK") { //서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
-//             this.list = res.data.data
-//             this.paging = res.data.pagination
-//             this.no = this.paging.total_list_cnt - ((this.paging.page - 1) * this.paging.page_size)
-//           }
-// //         this.list = res.data  
-
-//       }).catch((err) => {
-//         if (err.message.indexOf('Network Error') > -1) {
-//           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
-//         }
-//       })
-//     }
-//   }
-// }
 methods: {
     fnGetList() {
-        this.list = [{
-                "idx":1,
-                "title": "Vue.js vs React: 어떤 것이 더 좋을까? 비교 및 선택 가이드",
-                "author": "otter",
-                "created_at": "2023-12-17"
-            },
-            {
-                "idx":2,
-                "title": "제목2",
-                "author": "작성자2",
-                "created_at": "작성일시2"
-            },
-            {
-                "idx":3,
-                "title": "제목3",
-                "author": "작성자3",
-                "created_at": "작성일시3"
-            }]
-            
-        },
+      this.requestBody = { // 데이터 전송        
+        keyword: this.keyword,
+        page: this.page,
+        size: this.size
+      }
+
+      this.$axios.get(this.$serverUrl + "/posts", {
+        params: this.requestBody,
+        headers: {}
+      }).then((res) => {      
+
+        this.list = res.data  //서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
+
+      }).catch((err) => {
+        if (err.message.indexOf('Network Error') > -1) {
+          alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
+        }
+      })
+    },
     fnView(idx) {
-    this.requestBody.idx = idx
-    this.$router.push({
+      this.requestBody.idx = idx
+      this.$router.push({
         path: './detail',
         query: this.requestBody
-    })
+      })
     },
     fnWrite() {
       this.$router.push({
@@ -159,13 +128,11 @@ methods: {
     fnPage(n) {
       if (this.page !== n) {
         this.page = n
+        this.fnGetList()
       }
-
-      this.fnGetList()
     }
+  }
 }
-}
-    
 </script>
 
 <style>
@@ -176,7 +143,7 @@ methods: {
 }
 
 .link-button:hover {
-  text-decoration: underline; /* 커서를 갖다 대었을 때 텍스트에 밑줄 표시 */
+  text-decoration: underline;
 }
 
 </style>

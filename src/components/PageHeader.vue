@@ -49,19 +49,12 @@ export default {
 </script>
 
 <style>
-.nav-link {
-  display: inline-block;
-  padding: 5px;
-  border-radius: 3px;
-}
-
-
 a { 
   display: inline-block;
   padding: 5px;
   border-radius: 3px;
   cursor: pointer;
-  text-decoration-line: none;
+  text-decoration-line: none !important;
 }
 
 a.router-link-exact-active {
@@ -69,5 +62,6 @@ a.router-link-exact-active {
   border-radius: 3px;
   font-weight: bold;
   color: #0054ef;
+  text-decoration-line: underline;
 }
 </style>
