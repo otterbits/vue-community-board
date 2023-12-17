@@ -78,7 +78,7 @@ export default {
         page: this.$route.query.page ? this.$route.query.page : 1,
         size: this.$route.query.size ? this.$route.query.size : 10,
         search_key: this.$route.query.sk ? this.$route.query.sk : '',
-        serach_value: this.$route.query.sv ? this.$route.query.sv : '',
+        search_value: this.$route.query.sv ? this.$route.query.sv : '',
         paginavigation: function () { //페이징 처리 for문 커스텀
         let pageNumber = [] //;
         let start_page = this.paging.start_page;
@@ -123,24 +123,24 @@ mounted() {
 // }
 methods: {
     fnGetList() {
-        this.list = {
+        this.list = [{
                 "idx":1,
                 "title": "제목1",
                 "author": "작성자1",
                 "created_at": "작성일시1"
             },
             {
-                "idx":1,
-                "title": "제목1",
-                "author": "작성자1",
-                "created_at": "작성일시1"
+                "idx":2,
+                "title": "제목2",
+                "author": "작성자2",
+                "created_at": "작성일시2"
             },
             {
-                "idx":1,
-                "title": "제목1",
-                "author": "작성자1",
-                "created_at": "작성일시1"
-            }
+                "idx":3,
+                "title": "제목3",
+                "author": "작성자3",
+                "created_at": "작성일시3"
+            }]
             
         },
     fnView(idx) {
