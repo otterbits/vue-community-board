@@ -48,6 +48,25 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.nav-item {
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration-line: none;
+}
 
+.nav-link:hover {
+  background-color: #2980b9;
+}
+
+a {
+text-decoration-line: none;
+border-radius: 3px;
+}
+
+#nav a.router-link-exact-active {
+font-weight: bold;
+color: #90a7d1;
+}
 </style>
