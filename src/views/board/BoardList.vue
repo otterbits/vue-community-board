@@ -15,7 +15,7 @@
             <tbody>
                 <tr v-for="(row, idx) in list" :key="idx">
                 <td>{{ row.idx }}</td>
-            <td><a v-on:click="fnView(`${row.idx}`)">{{ row.title }}</a></td>
+            <td><a v-on:click="fnView(`${row.idx}`)" class="link-button">{{ row.title }}</a></td>
         <td>{{ row.author }}</td>
     <td>{{ row.created_at }}</td>
 </tr>
@@ -88,6 +88,7 @@ export default {
         }
     }
 },
+
 mounted() {
     this.fnGetList()
 },
@@ -125,9 +126,9 @@ methods: {
     fnGetList() {
         this.list = [{
                 "idx":1,
-                "title": "제목1",
-                "author": "작성자1",
-                "created_at": "작성일시1"
+                "title": "Vue.js vs React: 어떤 것이 더 좋을까? 비교 및 선택 가이드",
+                "author": "otter",
+                "created_at": "2023-12-17"
             },
             {
                 "idx":2,
@@ -166,3 +167,16 @@ methods: {
 }
     
 </script>
+
+<style>
+.link-button {
+  color: #3498db;
+  cursor: pointer;
+  text-decoration-line: none;
+}
+
+.link-button:hover {
+  text-decoration: underline; /* 커서를 갖다 대었을 때 텍스트에 밑줄 표시 */
+}
+
+</style>
