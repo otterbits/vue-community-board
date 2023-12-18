@@ -5,7 +5,7 @@
       <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
       <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
     </div>
-    <div class="board-contents">
+    <div class="board-content">
       <h3>{{ title }}</h3>
       <div>
         <strong class="w3-large">{{ author }}</strong>
@@ -13,8 +13,8 @@
         <span>{{ created_at }}</span>
       </div>
     </div>
-    <div class="board-contents">
-      <span>{{ contents }}</span>
+    <div class="board-content">
+      <span>{{ content }}</span>
     </div>
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
@@ -29,11 +29,11 @@ export default {
   data() { //변수생성
     return {
       requestBody: this.$route.query,
-      idx: this.$route.query.idx,
+      id: this.$route.query.id,
 
       title: '',
       author: '',
-      contents: '',
+      content: '',
       created_at: ''
     }
   },
@@ -42,12 +42,12 @@ export default {
   },
   methods: {
     fnGetView() {
-      this.$axios.get(this.$serverUrl + '/posts' + this.idx, {
+      this.$axios.get(this.$serverUrl + '/post/' + this.id, {
         params: this.requestBody
       }).then((res) => {
         this.title = res.data.title
         this.author = res.data.author
-        this.contents = res.data.contents
+        this.content = res.data.content
         this.created_at = res.data.created_at
       }).catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
@@ -56,7 +56,7 @@ export default {
       })
     },
     fnList() {
-      delete this.requestBody.idx
+      delete this.requestBody.id
       this.$router.push({
         path: './list',
         query: this.requestBody
@@ -71,7 +71,7 @@ export default {
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
 
-      this.$axios.delete(this.$serverUrl + '/post' + this.idx, {})
+      this.$axios.delete(this.$serverUrl + '/post/' + this.id, {})
           .then(() => {
             alert('삭제되었습니다.')
             this.fnList();

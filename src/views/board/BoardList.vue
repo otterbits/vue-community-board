@@ -13,9 +13,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(row, idx) in list" :key="idx">
-                <td>{{ row.idx }}</td>
-            <td><a v-on:click="fnView(`${row.idx}`)" class="link-button">{{ row.title }}</a></td>
+                <tr v-for="(row, id) in list" :key="id">
+                <td>{{ row.id }}</td>
+            <td><a v-on:click="fnView(`${row.id}`)" class="link-button">{{ row.title }}</a></td>
         <td>{{ row.author }}</td>
     <td>{{ row.created_at }}</td>
 </tr>
@@ -113,8 +113,8 @@ methods: {
         }
       })
     },
-    fnView(idx) {
-      this.requestBody.idx = idx
+    fnView(id) {
+      this.requestBody.id = id
       this.$router.push({
         path: './detail',
         query: this.requestBody
