@@ -28,7 +28,7 @@
 
 - **POST**
 
-![POST_글작성](https://github.com/otterbits/vue-community-board/assets/144116866/4a6a052c-0dfa-4b9b-9709-d97191d9e5d2)
+![POST_글작성](https://github.com/otterbits/vue-community-board/assets/144116866/4a6a052c-0dfa-4b9b-9709-d97191d9e5d2) <p align="center">*POST: 글 작성*</p>
 
   - 작성 버튼을 누르면 글 작성 페이지로 넘어가며, 글을 작성할 수 있습니다.
 
@@ -36,15 +36,15 @@
 
 - **GET**
 
-![GET_작성한글바로불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/5ddfb906-b127-4ae4-a703-c1ce64f29b3d)
+![GET_작성한글바로불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/5ddfb906-b127-4ae4-a703-c1ce64f29b3d) <p align="center">*GET: 작성 후 상세내용 불러오기*</p>
 
 - 글 작성 후, 바로 해당 글의 상세내용을 볼 수 있습니다.
 
-![GET_목록및상세글불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/8333a9f4-3ed7-413e-a83b-9332d63fd5e6)
+![GET_목록및상세글불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/8333a9f4-3ed7-413e-a83b-9332d63fd5e6) <p align="center">*GET: board 글 목록 불러오기(1)*</p>
 
 - 목록 버튼을 클릭하면 board 페이지로 이동, 모든 글 목록을 볼 수 있고, 해당 글을 클릭하면 상세 내용을 볼 수 있습니다.
 
-![GET_목록및상세글불러오기_2](https://github.com/otterbits/vue-community-board/assets/144116866/8c07257f-7d4d-42cc-b08d-ea4602d8f818)
+![GET_목록및상세글불러오기_2](https://github.com/otterbits/vue-community-board/assets/144116866/8c07257f-7d4d-42cc-b08d-ea4602d8f818) <p align="center">*GET: board 글 목록 불러오기(2)*</p>
 
 - 홈페이지에서 board 탭을 클릭하면 board 페이지로 이동, 모든 글 목록을 볼 수 있습니다.
 
@@ -52,7 +52,7 @@
 
 - **DELETE**
 
-![DELETE_글삭제](https://github.com/otterbits/vue-community-board/assets/144116866/3ee88434-135e-4e6e-9ed9-2cdd7b99038f)
+![DELETE_글삭제](https://github.com/otterbits/vue-community-board/assets/144116866/3ee88434-135e-4e6e-9ed9-2cdd7b99038f) <p align="center">*DELETE: 글 삭제(2)*</p>
 
 - 삭제 버튼을 클릭하면 작성한 글을 삭제합니다.
 
