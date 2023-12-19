@@ -60,7 +60,7 @@
         })
       },
       fnView(id) {
-        this.requestBody.id = this.id;
+        this.requestBody.id = id;
         this.$router.push({
           path: './detail',
           query: this.requestBody
