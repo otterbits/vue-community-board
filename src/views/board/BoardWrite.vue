@@ -39,9 +39,7 @@
     methods: {
       fnGetView() {
         if (this.id !== undefined) {
-          this.$axios.get('http://localhost:8081/api/post/${this.id}', {
-          // this.$axios.get(this.$serverUrl + '/post/' + this.id, {
-          // this.$axios.get(this.$serverUrl + 'posts' + '4', {
+          this.$axios.get(this.$serverUrl + '/post/' + this.id, {
             params: this.requestBody
           }).then((res) => {
             this.title = res.data.title
@@ -62,8 +60,7 @@
         })
       },
       fnView(id) {
-        this.requestBody.id = id
-        // this.id = id
+        this.requestBody.id = this.id;
         this.$router.push({
           path: './detail',
           query: this.requestBody
@@ -84,19 +81,19 @@
           this.$axios.post(apiUrl, this.form)
           .then((res) => {
             alert('글이 저장되었습니다.')
-            this.fnView(res.data.id)
+            this.fnView(res.data.id);
           }).catch((err) => {
             if (err.message.indexOf('Network Error') > -1) {
-              alert('저장안돼')
+              alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
             }
           })
         } else {
           //UPDATE
-          this.$axios.patch('http://localhost:8081/api/post/' + this.id, this.form)
+          this.$axios.patch(this.$serverUrl + '/post/' + this.id, this.form)
           // this.$axios.patch(apiUrl, this.form)
           .then((res) => {
             alert('글이 저장되었습니다.')
-            this.fnView(res.data.id)
+            this.fnView(res.data.id);
           }).catch((err) => {
             if (err.message.indexOf('Network Error') > -1) {
               alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
