@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<div>
+<div class="searchBox">
     <select v-model="search_key">
       <option value="">- 선택 -</option>
       <option value="author">작성자</option>
@@ -140,6 +140,9 @@ methods: {
 </script>
 
 <style>
+.searchBox {
+  margin: 20px;
+}
 .link-button {
   color: #3498db;
   cursor: pointer;
