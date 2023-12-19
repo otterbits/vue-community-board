@@ -2,12 +2,14 @@
 <template>
     <header>
         <h1>
-        <router-link to="/"><img alt="Vue logo" src="../assets/logo.png" width="100" height="100"></router-link>
+          <a href="/">
+        <img alt="Vue logo" href="/" src="../assets/logo.png" width="100" height="100">
+         </a>
         </h1>
     </header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">otterven</a>
+    <a class="navbar-brand" href="/">Otterworld</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,24 +18,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/">Home</router-link></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><router-link to="/about">About</router-link></a>
-        </li>
-        <li class="nav-item">
+        <!-- 로그인 기능은 추후 업데이트 -->
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#"><router-link to="/login">login</router-link></a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#"><router-link to="/board/list">board</router-link></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
       </ul>
     </div>
@@ -49,12 +39,22 @@ export default {
 </script>
 
 <style>
-a { 
+
+.nav-item:hover {
+  border-radius: 3px;
+  background-color: #95b9fb;
+}
+
+.nav-item {
+  text-decoration: none;
+
+}
+a {
   display: inline-block;
   padding: 5px;
   border-radius: 3px;
   cursor: pointer;
-  text-decoration-line: none !important;
+  text-decoration: none !important;
 }
 
 a.router-link-exact-active {
@@ -62,6 +62,6 @@ a.router-link-exact-active {
   border-radius: 3px;
   font-weight: bold;
   color: #0054ef;
-  text-decoration-line: underline;
+  text-decoration-line: nones !important;
 }
 </style>
