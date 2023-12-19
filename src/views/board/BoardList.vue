@@ -46,12 +46,11 @@
       <option value="">- 선택 -</option>
       <option value="author">작성자</option>
       <option value="title">제목</option>
-      <option value="contents">내용</option>
     </select>
     &nbsp;
-    <input type="text" v-model="search_value" @keyup.enter="fnPage()">
+    <input type="text" v-model="search_value" @keyup.enter="fnGetList">
     &nbsp;
-    <button @click="fnPage()">검색</button>
+    <button @click="fnFilterList">검색</button>
 </div>
 </template>
 
@@ -63,6 +62,7 @@ export default {
         list: {}, //리스트 데이터
         no: 0, //게시판 숫자처리
         author: '',
+        originalList: [],
         paging: {
             block: 0,
             end_page: 0,
@@ -105,7 +105,9 @@ methods: {
       this.$axios.get(this.$serverUrl + "/posts", {
         params: this.requestBody,
         headers: {}
-      }).then((res) => {      
+      }).then((res) => {     
+        this.originalList = res.data;
+        this.fnFilterList(); 
         this.list = res.data;
         this.list.map(function (item, index) {
           item.no = index + 1;
@@ -116,6 +118,18 @@ methods: {
           alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
         }
       })
+    },
+    fnFilterList() {
+      if (this.search_key && this.search_value) {
+        this.list = this.originalList.filter(item => {
+          return (
+            (this.search_key === 'title' && item.title.toLowerCase().includes(this.search_value.toLowerCase())) ||
+            (this.search_key === 'author' && item.author.toLowerCase().includes(this.search_value.toLowerCase()))
+          );
+        });
+      } else {
+        this.list = this.originalList;
+      }
     },
     fnView(id) {
       this.requestBody.id = id
