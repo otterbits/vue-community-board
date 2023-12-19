@@ -40,6 +40,7 @@
       fnGetView() {
         if (this.id !== undefined) {
           this.$axios.get('http://localhost:8081/api/post/${this.id}', {
+          // this.$axios.get(this.$serverUrl + '/post/' + this.id, {
           // this.$axios.get(this.$serverUrl + 'posts' + '4', {
             params: this.requestBody
           }).then((res) => {
@@ -62,6 +63,7 @@
       },
       fnView(id) {
         this.requestBody.id = id
+        // this.id = id
         this.$router.push({
           path: './detail',
           query: this.requestBody
@@ -90,7 +92,8 @@
           })
         } else {
           //UPDATE
-          this.$axios.patch(apiUrl, this.form)
+          this.$axios.patch('http://localhost:8081/api/post/' + this.id, this.form)
+          // this.$axios.patch(apiUrl, this.form)
           .then((res) => {
             alert('글이 저장되었습니다.')
             this.fnView(res.data.id)

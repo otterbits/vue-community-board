@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr v-for="(row, id) in list" :key="id">
-                <td>{{ row.id }}</td>
+                <td>{{ row.no }}</td>
             <td><a v-on:click="fnView(`${row.id}`)" class="link-button">{{ row.title }}</a></td>
         <td>{{ row.author }}</td>
     <td>{{ row.created_at }}</td>
@@ -61,7 +61,8 @@ export default {
     return {
         requestBody: {}, //리스트 페이지 데이터전송
         list: {}, //리스트 데이터
-        no: '', //게시판 숫자처리
+        no: 0, //게시판 숫자처리
+        author: '',
         paging: {
             block: 0,
             end_page: 0,
@@ -95,7 +96,8 @@ mounted() {
 methods: {
     fnGetList() {
       this.requestBody = { // 데이터 전송        
-        keyword: this.keyword,
+        sk: this.search_key,
+        sv: this.search_value,
         page: this.page,
         size: this.size
       }
@@ -104,8 +106,14 @@ methods: {
         params: this.requestBody,
         headers: {}
       }).then((res) => {      
+        this.list = res.data;
+        this.list.map(function (item, index) {
+          item.no = index + 1;
+        });  //서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
 
-        this.list = res.data  //서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
+        if (this.search_key === "author" && this.search_value) {
+            this.lit = this.list.filter(item => item.author === this.search_value);
+        }
 
       }).catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
