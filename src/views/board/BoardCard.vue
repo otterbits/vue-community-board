@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Article',
+  name: 'BoardCard',
   data() {
     return {
       requestBody: this.$route.query,
