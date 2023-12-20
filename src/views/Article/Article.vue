@@ -1,39 +1,64 @@
 <template>
-<div class="card-group">
-  <div class="card">
-    <img src="../../assets/christmas_1.jpg" class="card-img-top" alt="christmas_1">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  <div class="card-group">
+    <div class="card" v-for="item in post" :key="item.post">
+      <img v-if="item.image" :src="item.image" class="card-img-top">
+      <img v-else :src="require('../../assets/no_img.png')" class="card-img-top">
+      <div class="card-body">
+        <router-link :to="`/board/detail?sk=&sv=&page=1&size=10&id=${item.id}`"><h5 class="card-title">{{ item.title }}</h5></router-link>
+        <p class="card-text">author: {{ item.author }}</p>
+      </div>
     </div>
   </div>
-  <div class="card">
-    <img src="../../assets/christmas_2.jpg" class="card-img-top" alt="christmas_2">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="../../assets/ocean_1.jpg" class="card-img-top" alt="ocean_1">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
 export default {
-  name : 'Article'
-
+  name: 'Article',
+  data() {
+    return {
+      requestBody: this.$route.query,
+      post: [],
+    };
+  },
+  mounted() {
+    this.fnGetView();
+  },
+  methods: {
+    fnGetView() {
+      this.$axios.get(this.$serverUrl + '/posts', {
+        params: this.requestBody
+      }).then((res) => {
+        this.post = res.data;
+      // }).catch((err) => {
+      //   if (err.message.indexOf('Network Error') > -1) {
+      //     alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.');
+      //   }
+      // });
+      })
+    },
+  }
 }
 </script>
 
-<style>
+<style scoped>
+.card-text {
+  text-align: left;
+  margin: 5px;
+}
+
+.card-title {
+  color: #5c90f2;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.card-title:hover {
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 3px;
+  background: #5c90f2;
+}
+
+
 
 </style>
