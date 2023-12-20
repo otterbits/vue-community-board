@@ -1,11 +1,11 @@
 <template>
   <div class="card-group">
-    <div class="card" v-for="item in post" :key="item.post">
-      <img v-if="item.image" :src="item.image" class="card-img-top">
-      <img v-else :src="require('../../assets/no_img.png')" class="card-img-top">
+    <div v-for="(item, index) in post" :key="item.post">
+      <div class="card" v-if="index < 3">
       <div class="card-body">
         <router-link :to="`/board/detail?sk=&sv=&page=1&size=10&id=${item.id}`"><h5 class="card-title">{{ item.title }}</h5></router-link>
         <p class="card-text">author: {{ item.author }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -41,12 +41,22 @@ export default {
 </script>
 
 <style scoped>
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 90px;
+  width: 370px;
+  height: 300px;
+  overflow: hidden;
+}
 .card-text {
-  text-align: left;
   margin: 5px;
 }
 
 .card-title {
+  font-size: 40px;
   color: #5c90f2;
   padding: 10px;
   border-radius: 3px;
