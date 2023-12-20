@@ -3,7 +3,7 @@
     <header>
         <h1>
           <a href="/">
-        <img alt="Vue logo" href="/" src="../assets/logo.png" width="100" height="100">
+        <img alt="Otterworld logo" href="/" src="../assets/logo.png" width="100" height="100">
          </a>
         </h1>
     </header>
