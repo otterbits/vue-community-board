@@ -67,6 +67,11 @@
         })
       },
       fnSave() {
+        if (!this.title || !this.author) {
+        alert('제목과 작성자를 모두 입력해주세요.');
+        return;
+        }
+
         let apiUrl = this.$serverUrl + '/post/create';
         this.form = {
           "id": this.id,
