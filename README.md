@@ -52,6 +52,7 @@
 
 ![GET_최신글3개불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/9a48b5fe-e254-40ce-ad12-e43868c0f833) <p align="center">*GET: board 최신 글 3개 Home 탭에 불러오기*</p>
 
+- 홈페이지 board 탭에 글이 1개 이상 작성이 됐을 시, 최신 글로부터 3개까지 home 탭에 표시됩니다.
 
 ---
 
