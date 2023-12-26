@@ -5,10 +5,12 @@
 
 ## :tada: 소개
 
-<a href="https://otterbits.github.io/vue-community-board/"> 
-<img src="https://cdn.icon-icons.com/icons2/1790/PNG/512/homepage1_114609.png" width="50" height="50"/>
+<a href="https://otterbits.github.io/vue-community-board/">
+  <img src="https://cdn.icon-icons.com/icons2/1790/PNG/512/homepage1_114609.png" alt="홈페이지 아이콘" width="50" height="50"/>
 </a>
+<br>
 
+<span style="color:yellowgreen">**⬆️홈페이지 바로가기**</span>
 
 **vue.cli**로 개발 환경을 구성하여 게시판을 만들어보려고 합니다.
 
@@ -48,6 +50,9 @@
 
 - 홈페이지에서 board 탭을 클릭하면 board 페이지로 이동, 모든 글 목록을 볼 수 있습니다.
 
+![GET_최신글3개불러오기](https://github.com/otterbits/vue-community-board/assets/144116866/9a48b5fe-e254-40ce-ad12-e43868c0f833) <p align="center">*GET: board 최신 글 3개 Home 탭에 불러오기*</p>
+
+
 ---
 
 - **DELETE**
@@ -58,6 +63,12 @@
 
 
 ---
+
+- **ETC**
+
+![GET_글필터기능](https://github.com/otterbits/vue-community-board/assets/144116866/32b2b9f2-e3d8-416a-b7b9-b5dfa839ede7) <p align="center">*글 목록 필터링*</p>
+
+- 검색 버튼을 누르면 필터(작성자, 제목)에 따라 글 목록이 필터링됩니다.
 
 <div align="center">
   
