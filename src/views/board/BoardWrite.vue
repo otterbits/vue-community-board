@@ -29,7 +29,7 @@
         author: '',
         content: '',
         created_at: '',
-        date: ''
+        date: '',
       }
     },
     mounted() {

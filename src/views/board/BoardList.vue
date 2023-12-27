@@ -6,18 +6,18 @@
         <table class="w3-table-all">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>등록일시</th>
+          <th>No</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>등록일시</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(row, id) in list" :key="id">
                 <td>{{ row.no }}</td>
             <td><a v-on:click="fnView(`${row.id}`)" class="link-button">{{ row.title }}</a></td>
-        <td>{{ row.author }}</td>
-    <td>{{ row.created_at }}</td>
+            <td>{{ row.author }}</td>
+          <td>{{ row.date }}</td>
 </tr>
             </tbody>
         </table>
@@ -62,6 +62,7 @@ export default {
         list: {}, //리스트 데이터
         no: 0, //게시판 숫자처리
         author: '',
+        date: '',
         originalList: [],
         paging: {
             block: 0,
