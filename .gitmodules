@@ -1,0 +1,3 @@
+[submodule "community-board-server"]
+	path = community-board-server
+	url = https://github.com/SanGyuk-Raccoon/community-board-server
