@@ -1,7 +1,7 @@
 <template>
   <div class="card-group">
-    <div v-for="(item, index) in post" :key="item.post">
-      <div class="card" v-if="index < 3">
+    <div v-for="item in post.slice().reverse().slice(0, 3)" :key="item.post">
+      <div class="card">
       <div class="card-body">
         <router-link :to="`/board/detail?sk=&sv=&page=1&size=10&id=${item.id}`"><h5 class="card-title">{{ item.title }}</h5></router-link>
         <p class="card-text">author: {{ item.author }}</p>
